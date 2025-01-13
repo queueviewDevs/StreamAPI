@@ -15,12 +15,10 @@ app.use(bodyParser.json());
 
 app.server = http.createServer(app);
 
-
 //Setup WebSocket server
 app.wss = new WebSocketServer({server: app.server});
 app.connections = new connection(app);
 app.routers = routers(app);
-
 
 app.server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
